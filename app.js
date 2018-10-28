@@ -2,19 +2,28 @@ const express = require('express')
 const app = express()
 var exphbs = require('express-handlebars');
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/rotten-potatoes');
+
+const Review = mongoose.model('Review', {
+  title: String,
+  movieTitle: String
+});
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// OUR MOCK ARRAY OF PROJECTS
-// let reviews = [
-//   { title: "High Horse", movieTitle: "Kasey Musgraves" },
-//   { title: "Issa Photoshoot", movieTitle: "Star" },
-//   {title: "How Does a Moment Last Forever", movieTitle: "Beatuy and the Beast"}
-// ]
 
 // INDEX
 app.get('/', (req, res) => {
-  res.render('reviews-index', { reviews: reviews });
+  Review.find()
+    .then(reviews => {
+      // code here completes when promise is done
+      res.render('reviews-index', { reviews: reviews });
+    })
+    .catch(err => {
+      console.log(err);
+    })
 })
 
 app.listen(3000, () => {
