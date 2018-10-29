@@ -19,8 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(reviews);
 
 
-app.listen(3000, () => {
+app.listen(port, function () {
   console.log('App listening on port 3000!')
-})
+});
 
 module.exports = app;
