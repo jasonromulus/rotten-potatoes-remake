@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
-var exphbs = require('express-handlebars');
-// const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const reviews = require('./controllers/reviews.js');
+const Review = require('./models/review');
+const Comment = require('./models/comment');
 var mongoose = require('mongoose');
+var exphbs = require('express-handlebars');
 const port = process.env.PORT || 3000;
 
 
