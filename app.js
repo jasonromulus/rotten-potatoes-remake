@@ -1,12 +1,13 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const reviews = require('./controllers/reviews.js');
 const Review = require('./models/review.js');
 const Comment = require('./controllers/comments.js');
-var mongoose = require('mongoose');
-var exphbs = require('express-handlebars');
+const movies = require('.controllers/movies.js')
+const mongoose = require('mongoose');
+const exphbs = require('express-handlebars');
 const port = process.env.PORT || 3000;
 
 
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(reviews);
 app.use(Comment);
 app.use(Review);
+app.use(movies);
 
 app.listen(port, function () {
   console.log('App listening on port 3000!')
