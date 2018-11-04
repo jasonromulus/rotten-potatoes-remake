@@ -11,4 +11,4 @@ app.get('/', (req, res) => {
   }).catch(console.error)
 })
 
-module.exports = app;
+module.exports = app
