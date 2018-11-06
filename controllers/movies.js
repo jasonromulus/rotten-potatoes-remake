@@ -1,7 +1,4 @@
-const express = require('express');
-const app = express();
-const Review = require('../models/review.js');
-const Comment = require('../models/comment.js');
+const app = require('express')();
 const MovieDb = require('moviedb-promise');
 const moviedb = new MovieDb('23f232628c0802c2d23d52e6054496cb');
 
