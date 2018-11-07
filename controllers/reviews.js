@@ -1,9 +1,12 @@
+//this stuff is required to make this page work without it the page can't get the right models when an action is finished
 const Review = require('../models/review');
 const Comment = require('../models/comment.js')
 const express = require('express')
 const app = express()
 
-
+//These are the main ROUTES for this project right now
+//my idex is going to need to movie to movies.js eventually
+//for right now I can't get the MovieDB api to work 
 // INDEX
 app.get('/', (req, res) => {
 Review.find()

@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const Comment = require('../models/comment.js')
 
+//These are the routes for comments
 // CREATE Comment
 app.post('/reviews/comments', (req, res) => {
     Comment.create(req.body).then(comment => {
