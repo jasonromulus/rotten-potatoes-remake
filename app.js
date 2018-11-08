@@ -12,7 +12,7 @@ const Review = require('./models/review.js');
 
 //Controllers that are needed
 const Comment = require('./controllers/comments.js');
-const movies = require('./controllers/movies.js')
+const movies = require('./controllers/movies.js');
 const reviews = require('./controllers/reviews.js');
 
 //Mongoose Connections
