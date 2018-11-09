@@ -7,7 +7,6 @@ const port = process.env.PORT || 3000;
 const exphbs = require('express-handlebars');
 
 //Models that are needed
-//Ask Zurich why he has a comment model in his routes on github
 const Review = require('./models/review.js');
 
 //Controllers that are needed
