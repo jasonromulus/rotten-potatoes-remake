@@ -9,10 +9,7 @@ const exphbs = require('express-handlebars');
 //Models that are needed
 const Review = require('./models/review.js');
 
-//Controllers that are needed
-const Comment = require('./controllers/comments.js');
-const movies = require('./controllers/movies.js');
-const reviews = require('./controllers/reviews.js');
+
 
 //Mongoose Connections
 const mongoose = require('mongoose');
@@ -28,11 +25,15 @@ app.set('view engine', 'handlebars');
 app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//Controllers that are needed
+const Comment = require('./controllers/comments.js');
+require('./controllers/movies.js')(app);
+const reviews = require('./controllers/reviews.js');
+
 //these access my controls
 app.use(reviews);
 app.use(Comment);
 app.use(Review);
-app.use(movies);
 
 //Listen for the port
 app.listen(port, function () {

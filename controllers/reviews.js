@@ -5,19 +5,17 @@ const express = require('express')
 const app = express()
 
 //These are the main ROUTES for this project right now
-//my idex is going to need to movie to movies.js eventually
-//for right now I can't get the MovieDB api to work 
-// INDEX
-app.get('/', (req, res) => {
-Review.find()
-    .then(reviews => {
-    // code here completes when promise is done
-    res.render('reviews-index', { reviews: reviews });
-    })
-    .catch(err => {
-    console.log(err);
-    })
-});
+// // INDEX
+// app.get('/', (req, res) => {
+// Review.find()
+//     .then(reviews => {
+//     // code here completes when promise is done
+//     res.render('reviews-index', { reviews: reviews });
+//     })
+//     .catch(err => {
+//     console.log(err);
+//     })
+// });
 
 // NEW
 app.get('/reviews/new', (req, res) => {
