@@ -9,8 +9,6 @@ const exphbs = require('express-handlebars');
 //Models that are needed
 const Review = require('./models/review.js');
 
-
-
 //Mongoose Connections
 const mongoose = require('mongoose');
 
