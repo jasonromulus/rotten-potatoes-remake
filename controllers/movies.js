@@ -19,5 +19,5 @@ module.exports = (app) => {
         res.render('movies-show', { movie: movie });
       }).catch(console.error);
     }).catch(console.error);
-  });
+  })
 }
